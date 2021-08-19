@@ -54,33 +54,3 @@ public class UserCredentialsTest {
 
 
 }
-
-/*
-try
-        {
-        WebElement email = driver.findElement(By.id("Email email.sendKeys("ENTER INCORRECT MAIL ID");
-        WebElement password = driver.findElement(By.id("Passwd password.sendKeys("ENTER INCORRECT PASSWORD");
-        WebElement button = driver.findElement(By.id("signIn button.click();
-
-        WebElement GmailText = driver.findElement(By.xpath("//*[@id=':36']"));
-        String text = GmailText.getText();
-        if(text.equals("Primary"))
-        {
-        System.out.println("----------Sucessfuln -------");
-        }
-        else
-        {
-        System.out.println("----------Loginure ----------");
-        }
-
-        }
-        catch(Throwable e)
-        {
-
-        System.out.println("Errororrect Email and Password. \n-----------------------");
-        System.out.println("Elementfound: "+e.getMessage() + "\n-----------------------");
-        }
-
-        driver.findElement(By.id("Email")).clearlearing the Email field
-        driver.findElement(By.id("Passwd")).clearlearing the Password field
-		*/
