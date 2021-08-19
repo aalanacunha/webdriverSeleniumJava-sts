@@ -52,5 +52,4 @@ public class UserCredentialsTest {
         browser.quit();
     }
 
-
 }
