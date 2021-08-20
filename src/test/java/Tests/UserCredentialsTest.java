@@ -1,5 +1,7 @@
 package Tests;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,16 +9,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class UserCredentialsTest {
-    @Test
-    public void testLogin(){
+    private WebDriver browser;
+
+    @Before
+    public void setUp() {
         //open browser
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\aalan\\drivers\\chromedriver.exe");
-        WebDriver browser = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\aalan\\drivers\\chromedriver.exe");
+        browser = new ChromeDriver();
 
         //open website
         browser.get("http://the-internet.herokuapp.com/login");
         browser.manage().window().maximize();
+    }
 
+    @Test
+    public void testLogin() {
         //Click on id="username" Username and type tomsmith
         WebElement formLogin = browser.findElement(By.id("login"));
 
@@ -26,9 +33,9 @@ public class UserCredentialsTest {
         username.sendKeys("tomsmith");
         String userValidation = username.getText();
         //Validation
-        if(userValidation.equalsIgnoreCase("tomsmith")) {
+        if (userValidation.equalsIgnoreCase("tomsmith")) {
             System.out.println("Login Invalid");
-        }else{
+        } else {
             System.out.print("login successful");
         }
 
@@ -39,17 +46,20 @@ public class UserCredentialsTest {
         password.sendKeys("SuperSecretPassword!");
         String passwordValidation = password.getText();
         //Validation
-        if(passwordValidation.equalsIgnoreCase("SuperSecretPassword!")) {
+        if (passwordValidation.equalsIgnoreCase("SuperSecretPassword!")) {
             System.out.println("Invalid Password");
-        }else{
+        } else {
             System.out.print("Successful");
         }
 
         //Click button Login through xpath //button[@type='submit']
         formLogin.findElement(By.xpath("//button[@type='submit']")).click();
 
+    }
+
+    @After
+    public void tearDown() {
         //Close Chrome
         browser.quit();
     }
-
 }
