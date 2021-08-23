@@ -29,6 +29,14 @@ public class UserCredentialsTest {
 
     @Test
     public void testLogin() {
+
+        /* Given I visit "http://the-internet.herokuapp.com/login"
+           When I enter "Tomsmith" in the "Login" field
+           And I enter "SuperSecretPassword" in the "password" field
+           And I press the "login" button
+           Then I should see the "welcome" page
+        */
+
         //Click on id="username" Username and type tomsmith
         WebElement formLogin = browser.findElement(By.id("login"));
 
